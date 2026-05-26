@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bash \"C:/Users/SERON/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0/skills/brainstorming/scripts/start-server.sh\" --project-dir \"d:/CANARIASLEAD/REFORMPLAN\")",
+      "WebFetch(domain:modatoldos.com)",
+      "WebSearch"
+    ]
+  }
+}

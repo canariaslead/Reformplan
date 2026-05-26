@@ -1,0 +1,107 @@
+<h2>¿Cómo rediseñamos la sección "Cómo trabajamos"?</h2>
+<p class="subtitle">Tres enfoques distintos — haz clic en el que más te gusta</p>
+
+<div class="cards">
+
+  <!-- OPCIÓN A: Scroll pegajoso -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0f0f0f;padding:20px;min-height:220px;display:flex;flex-direction:column;justify-content:center">
+      <div style="display:flex;gap:20px;align-items:flex-start">
+        <!-- Lado izquierdo sticky: número grande -->
+        <div style="min-width:80px;text-align:center;position:relative">
+          <div style="font-size:56px;font-weight:900;color:#c9a84c;line-height:1">01</div>
+          <div style="font-size:10px;color:#999;margin-top:4px;text-transform:uppercase;letter-spacing:1px">Contacto</div>
+          <div style="position:absolute;left:50%;top:68px;width:2px;height:80px;background:linear-gradient(#c9a84c,#333);transform:translateX(-50%)"></div>
+        </div>
+        <!-- Lado derecho: texto que scrollea -->
+        <div style="flex:1;padding-left:16px;border-left:1px solid #222">
+          <div style="color:#c9a84c;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px">Paso 1 de 4</div>
+          <div style="color:#fff;font-size:15px;font-weight:700;margin-bottom:6px">Contacto</div>
+          <div style="color:#aaa;font-size:12px;line-height:1.6">Nos escribes por WhatsApp con dos líneas. Te respondemos en horas.</div>
+          <!-- mini preview del cambio animado -->
+          <div style="margin-top:14px;display:flex;gap:8px">
+            <div style="width:10px;height:10px;border-radius:50%;background:#c9a84c"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#333"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#333"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#333"></div>
+          </div>
+          <div style="margin-top:8px;color:#666;font-size:11px">← número se queda fijo, texto avanza al hacer scroll</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Scroll pegajoso</h3>
+      <p>Número gigante a la izquierda queda fijo. Al bajar el scroll el número cambia (01 → 02 → 03 → 04) y el texto de la derecha va avanzando. Efecto cinematic, muy moderno.</p>
+    </div>
+  </div>
+
+  <!-- OPCIÓN B: Stepper horizontal -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0f0f0f;padding:20px;min-height:220px;display:flex;flex-direction:column;justify-content:center">
+      <!-- Línea de progreso animada -->
+      <div style="display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:20px">
+        <div style="width:28px;height:28px;border-radius:50%;background:#c9a84c;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#000;flex-shrink:0">1</div>
+        <div style="flex:1;height:2px;background:linear-gradient(90deg,#c9a84c 60%,#333 60%)"></div>
+        <div style="width:28px;height:28px;border-radius:50%;background:#c9a84c;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#000;flex-shrink:0">2</div>
+        <div style="flex:1;height:2px;background:#333"></div>
+        <div style="width:28px;height:28px;border-radius:50%;background:#333;border:2px solid #555;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#777;flex-shrink:0">3</div>
+        <div style="flex:1;height:2px;background:#333"></div>
+        <div style="width:28px;height:28px;border-radius:50%;background:#333;border:2px solid #555;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#777;flex-shrink:0">4</div>
+      </div>
+      <!-- Cards de pasos -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
+        <div style="background:#1a1a1a;border:1px solid #c9a84c;border-radius:8px;padding:10px">
+          <div style="color:#c9a84c;font-size:10px;font-weight:700;margin-bottom:4px">CONTACTO</div>
+          <div style="color:#ccc;font-size:10px;line-height:1.4">WhatsApp. Te respondemos en horas.</div>
+        </div>
+        <div style="background:#1a1a1a;border:1px solid #c9a84c;border-radius:8px;padding:10px">
+          <div style="color:#c9a84c;font-size:10px;font-weight:700;margin-bottom:4px">VISITA</div>
+          <div style="color:#ccc;font-size:10px;line-height:1.4">Vamos gratis. Medimos y anotamos.</div>
+        </div>
+        <div style="background:#1a1a1a;border:1px solid #444;border-radius:8px;padding:10px;opacity:0.5">
+          <div style="color:#888;font-size:10px;font-weight:700;margin-bottom:4px">PRESUPUESTO</div>
+          <div style="color:#666;font-size:10px;line-height:1.4">24-48h. Cerrado por escrito.</div>
+        </div>
+        <div style="background:#1a1a1a;border:1px solid #444;border-radius:8px;padding:10px;opacity:0.5">
+          <div style="color:#888;font-size:10px;font-weight:700;margin-bottom:4px">OBRA</div>
+          <div style="color:#666;font-size:10px;line-height:1.4">Fecha acordada. Entrega con garantía.</div>
+        </div>
+      </div>
+      <div style="margin-top:10px;color:#666;font-size:11px;text-align:center">← los 4 pasos visibles de golpe, animación al entrar en pantalla</div>
+    </div>
+    <div class="card-body">
+      <h3>B — Stepper horizontal</h3>
+      <p>Los 4 pasos en una fila horizontal con línea de progreso. Cards que aparecen con animación en cascada al entrar en pantalla. Compacto, rápido de leer, muy usado en webs de empresas.</p>
+    </div>
+  </div>
+
+  <!-- OPCIÓN C: Tabs/acordeón horizontal -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0f0f0f;padding:20px;min-height:220px;display:flex;flex-direction:column;justify-content:center">
+      <!-- Tabs numeradas -->
+      <div style="display:flex;gap:0;margin-bottom:16px;border-bottom:2px solid #222">
+        <div style="padding:8px 16px;border-bottom:2px solid #c9a84c;margin-bottom:-2px;color:#c9a84c;font-size:11px;font-weight:700;cursor:pointer">01 Contacto</div>
+        <div style="padding:8px 16px;color:#555;font-size:11px;font-weight:600;cursor:pointer">02 Visita</div>
+        <div style="padding:8px 16px;color:#555;font-size:11px;font-weight:600;cursor:pointer">03 Presupuesto</div>
+        <div style="padding:8px 16px;color:#555;font-size:11px;font-weight:600;cursor:pointer">04 Obra</div>
+      </div>
+      <!-- Contenido del tab activo -->
+      <div style="display:flex;gap:24px;align-items:flex-start">
+        <div style="font-size:72px;font-weight:900;color:#1a1a1a;line-height:1;flex-shrink:0">01</div>
+        <div>
+          <div style="color:#fff;font-size:15px;font-weight:700;margin-bottom:6px">Contacto</div>
+          <div style="color:#aaa;font-size:12px;line-height:1.6;max-width:260px">Nos escribes por WhatsApp con dos líneas y, si quieres, una foto. Te respondemos en horas.</div>
+          <div style="margin-top:12px;display:flex;gap:8px">
+            <div style="background:#c9a84c;color:#000;padding:5px 12px;border-radius:4px;font-size:11px;font-weight:700">Siguiente paso →</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:10px;color:#666;font-size:11px">← el usuario navega manualmente haciendo clic en las tabs</div>
+    </div>
+    <div class="card-body">
+      <h3>C — Tabs interactivas</h3>
+      <p>Cuatro pestañas numeradas arriba. El usuario hace clic para avanzar o también se auto-avanza con temporizador. Número decorativo grande en el fondo. Interactivo y limpio.</p>
+    </div>
+  </div>
+
+</div>

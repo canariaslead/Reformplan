@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mockup — Cómo trabajamos</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #1a1a1a; font-family: 'Inter', sans-serif; color: #fff; padding: 20px; }
+
+  .preview-label {
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  /* --- SECCIÓN PROCESO (mockup fiel al sitio) --- */
+  .process-mock {
+    background: #0c0c0c;
+    border-radius: 16px;
+    overflow: hidden;
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid #222;
+  }
+
+  .proc-header {
+    padding: 48px 48px 32px;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+  }
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: #9c9c9c;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .proc-header h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -.02em;
+    line-height: 1.05;
+    margin-bottom: 10px;
+  }
+  .proc-header p {
+    color: #cfcdc8;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* Layout sticky principal */
+  .proc-sticky-wrap {
+    display: flex;
+    min-height: 520px;
+  }
+
+  /* Columna izquierda — sticky */
+  .proc-left {
+    width: 220px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: fit-content;
+    padding: 48px 32px 48px 48px;
+    border-right: 1px solid rgba(255,255,255,.07);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .proc-num {
+    font-family: 'Manrope', sans-serif;
+    font-size: 88px;
+    font-weight: 800;
+    color: #D32027;
+    line-height: 1;
+    letter-spacing: -.04em;
+    transition: all .4s ease;
+  }
+  .proc-num-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #D32027;
+    margin-top: 8px;
+    margin-bottom: 24px;
+    opacity: .8;
+  }
+  /* Indicadores de progreso */
+  .proc-dots {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .proc-dot {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    opacity: .35;
+    transition: opacity .3s;
+  }
+  .proc-dot.active { opacity: 1; }
+  .proc-dot-pip {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #D32027;
+    transition: transform .3s;
+  }
+  .proc-dot.active .proc-dot-pip { transform: scale(1.6); }
+  .proc-dot span {
+    font-size: 11px;
+    color: #9c9c9c;
+    font-weight: 500;
+  }
+  .proc-dot.active span { color: #fff; }
+
+  /* Columna derecha — scrolleable */
+  .proc-right {
+    flex: 1;
+  }
+  .proc-step-block {
+    padding: 48px 48px 48px 40px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: background .3s;
+  }
+  .proc-step-block:last-child { border-bottom: none; }
+  .proc-step-block.active {
+    background: rgba(211,32,39,.04);
+  }
+  .proc-step-num-sm {
+    font-size: 11px;
+    font-weight: 700;
+    color: #D32027;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .proc-step-num-sm::after {
+    content: "";
+    flex: 0 0 32px;
+    height: 1px;
+    background: linear-gradient(90deg, #D32027, transparent);
+  }
+  .proc-step-block h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+    letter-spacing: -.01em;
+  }
+  .proc-step-block p {
+    font-size: 14.5px;
+    color: #bdbdb8;
+    line-height: 1.55;
+    max-width: 500px;
+  }
+
+  /* Nota interactiva */
+  .interaction-note {
+    max-width: 900px;
+    margin: 16px auto 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(211,32,39,.08);
+    border: 1px solid rgba(211,32,39,.2);
+    border-radius: 8px;
+    padding: 12px 18px;
+  }
+  .interaction-note svg { width: 16px; height: 16px; color: #D32027; flex-shrink: 0; }
+  .interaction-note p { font-size: 12px; color: #ccc; line-height: 1.4; margin: 0; }
+  .interaction-note strong { color: #fff; }
+
+  /* Selector de paso (simulación interactiva) */
+  .step-selector {
+    max-width: 900px;
+    margin: 20px auto 0;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .step-btn {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #999;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s;
+    font-family: 'Inter', sans-serif;
+  }
+  .step-btn:hover { border-color: #D32027; color: #fff; }
+  .step-btn.active { background: #D32027; border-color: #D32027; color: #fff; }
+  .step-label {
+    max-width: 900px;
+    margin: 12px auto 0;
+    text-align: center;
+    font-size: 11px;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+
+<p class="preview-label">Vista previa — Cómo trabajamos (scroll pegajoso)</p>
+
+<div class="process-mock" id="mock">
+  <div class="proc-header">
+    <span class="eyebrow">Cómo trabajamos</span>
+    <h2>Cuatro pasos. Sin sorpresas.</h2>
+    <p>Desde que nos escribes hasta que te entregamos la obra.</p>
+  </div>
+
+  <div class="proc-sticky-wrap">
+    <!-- IZQUIERDA: sticky con número grande -->
+    <div class="proc-left">
+      <div class="proc-num" id="bigNum">01</div>
+      <div class="proc-num-label" id="bigLabel">Contacto</div>
+      <div class="proc-dots">
+        <div class="proc-dot active" onclick="setStep(0)">
+          <div class="proc-dot-pip"></div>
+          <span>Contacto</span>
+        </div>
+        <div class="proc-dot" onclick="setStep(1)">
+          <div class="proc-dot-pip"></div>
+          <span>Visita</span>
+        </div>
+        <div class="proc-dot" onclick="setStep(2)">
+          <div class="proc-dot-pip"></div>
+          <span>Presupuesto</span>
+        </div>
+        <div class="proc-dot" onclick="setStep(3)">
+          <div class="proc-dot-pip"></div>
+          <span>Obra y entrega</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DERECHA: bloques de contenido -->
+    <div class="proc-right">
+      <div class="proc-step-block active" id="step-0">
+        <div class="proc-step-num-sm">01</div>
+        <h3>Contacto</h3>
+        <p>Nos escribes por WhatsApp con dos líneas y, si quieres, una foto. Te respondemos en horas.</p>
+      </div>
+      <div class="proc-step-block" id="step-1">
+        <div class="proc-step-num-sm">02</div>
+        <h3>Visita y medición</h3>
+        <p>Vamos a verlo gratis. Medimos, anotamos materiales y entendemos qué quieres exactamente.</p>
+      </div>
+      <div class="proc-step-block" id="step-2">
+        <div class="proc-step-num-sm">03</div>
+        <h3>Presupuesto cerrado</h3>
+        <p>En 24–48h tienes el presupuesto por escrito, desglosado y con fecha de entrega.</p>
+      </div>
+      <div class="proc-step-block" id="step-3">
+        <div class="proc-step-num-sm">04</div>
+        <h3>Obra y entrega</h3>
+        <p>Empezamos en la fecha acordada. Limpio cada día. Te entregamos con limpieza final y garantía.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="interaction-note">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+  <p><strong>En la web real:</strong> el número cambia automáticamente al hacer scroll. Aquí puedes simularlo con los botones de abajo.</p>
+</div>
+
+<div class="step-selector">
+  <button class="step-btn active" onclick="setStep(0)">01 Contacto</button>
+  <button class="step-btn" onclick="setStep(1)">02 Visita</button>
+  <button class="step-btn" onclick="setStep(2)">03 Presupuesto</button>
+  <button class="step-btn" onclick="setStep(3)">04 Obra</button>
+</div>
+<p class="step-label">Pulsa para simular el cambio de paso (en la web real ocurre con scroll)</p>
+
+<script>
+const steps = [
+  { num: '01', label: 'Contacto' },
+  { num: '02', label: 'Visita' },
+  { num: '03', label: 'Presupuesto' },
+  { num: '04', label: 'Obra y entrega' }
+];
+
+function setStep(i) {
+  const bigNum = document.getElementById('bigNum');
+  const bigLabel = document.getElementById('bigLabel');
+
+  // Animación número
+  bigNum.style.opacity = '0';
+  bigNum.style.transform = 'translateY(10px)';
+  setTimeout(() => {
+    bigNum.textContent = steps[i].num;
+    bigLabel.textContent = steps[i].label;
+    bigNum.style.opacity = '1';
+    bigNum.style.transform = 'translateY(0)';
+  }, 180);
+
+  // Actualizar bloques activos
+  document.querySelectorAll('.proc-step-block').forEach((el, idx) => {
+    el.classList.toggle('active', idx === i);
+  });
+
+  // Actualizar dots
+  document.querySelectorAll('.proc-dot').forEach((el, idx) => {
+    el.classList.toggle('active', idx === i);
+  });
+
+  // Actualizar botones
+  document.querySelectorAll('.step-btn').forEach((el, idx) => {
+    el.classList.toggle('active', idx === i);
+  });
+}
+
+// Transición suave del número
+document.getElementById('bigNum').style.transition = 'opacity .18s, transform .18s';
+</script>
+</body>
+</html>

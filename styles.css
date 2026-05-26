@@ -347,9 +347,10 @@ section{padding:90px 0}
 .rev .who span{font-size:12px;color:var(--muted)}
 
 /* CTA */
-.cta{padding:100px 0}
-.cta-box{background:var(--ink);color:#fff;border-radius:20px;padding:50px 32px;display:grid;gap:48px;grid-template-columns:1fr;align-items:start}
-@media(min-width:880px){.cta-box{grid-template-columns:1fr 1.2fr;padding:60px 56px}}
+.cta{padding:0;background:var(--ink)}
+.cta .container{padding-top:80px;padding-bottom:80px}
+.cta-box{color:#fff;display:grid;gap:48px;grid-template-columns:1fr;align-items:start}
+@media(min-width:880px){.cta-box{grid-template-columns:1fr 1.2fr}}
 .cta-info{display:flex;flex-direction:column}
 
 /* Formulario */
@@ -362,6 +363,10 @@ section{padding:90px 0}
 .cta-field input::placeholder,.cta-field textarea::placeholder{color:rgba(255,255,255,.3)}
 .cta-field select option{background:#1a1a1a;color:#fff}
 .cta-field input:focus,.cta-field select:focus,.cta-field textarea:focus{border-color:var(--red);background:rgba(255,255,255,.1)}
+.form-consent{display:flex;align-items:flex-start;gap:10px;cursor:pointer;margin-bottom:4px}
+.form-consent input[type="checkbox"]{margin-top:3px;flex-shrink:0;accent-color:var(--red);width:15px;height:15px}
+.form-consent span{font-size:12px;color:#6b6b6b;line-height:1.5}
+.form-consent a{color:var(--red);text-decoration:underline}
 .cta-form-note{text-align:center;font-size:12px;color:#6b6b6b;font-family:'Poppins',sans-serif;margin-top:-4px}
 .cta-form-ok{background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.3);border-radius:10px;padding:14px 18px;color:#4ade80;font-size:14px;font-family:'Poppins',sans-serif;text-align:center}
 .cta-box h2{font-size:clamp(30px,4.5vw,48px);color:#fff}
@@ -544,7 +549,6 @@ footer{border-top:1px solid var(--line);padding:50px 0 110px;color:var(--muted);
 
 /* Separador diagonal entre secciones oscuras y claras */
 .cta{position:relative}
-.cta::before{content:"";position:absolute;top:-40px;left:0;right:0;height:80px;background:var(--bg);clip-path:polygon(0 0,100% 60%,100% 100%,0 100%);z-index:1;pointer-events:none}
 
 /* Hexágono decorativo en fotos de servicios — esquina */
 .svc-photo{position:relative}

@@ -6,7 +6,7 @@
 <title>Reform Plan — Reformas en Gran Canaria con presupuesto cerrado</title>
 <meta name="description" content="Empresa de reformas integrales en Gran Canaria. Presupuesto cerrado por escrito, plazo garantizado y un solo equipo para toda la obra. Llámanos o pide presupuesto gratis." />
 <meta name="theme-color" content="#D32027" />
-<link rel="canonical" href="https://reformplan.es/" />
+<link rel="canonical" href="https://reformplan.vercel.app/" />
 
 <!-- Geo SEO -->
 <meta name="geo.region" content="ES-CN" />
@@ -18,8 +18,8 @@
 <meta property="og:title" content="Reform Plan — Reformas en Gran Canaria con presupuesto cerrado" />
 <meta property="og:description" content="Reformas integrales en Gran Canaria. Precio cerrado por escrito, plazo garantizado y sin sorpresas. Pide presupuesto gratis." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://reformplan.es/" />
-<meta property="og:image" content="https://reformplan.es/imagenes/hero.webp" />
+<meta property="og:url" content="https://reformplan.vercel.app/" />
+<meta property="og:image" content="https://reformplan.vercel.app/imagenes/hero.webp" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content="es_ES" />
@@ -29,7 +29,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Reform Plan — Reformas en Gran Canaria" />
 <meta name="twitter:description" content="Reformas integrales con presupuesto cerrado y plazo garantizado. Gran Canaria." />
-<meta name="twitter:image" content="https://reformplan.es/imagenes/hero.webp" />
+<meta name="twitter:image" content="https://reformplan.vercel.app/imagenes/hero.webp" />
 
 <!-- Preload hero -->
 <link rel="preload" as="image" href="imagenes/hero.webp" />
@@ -39,28 +39,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 
-<!-- Schema: LocalBusiness + GeneralContractor -->
+<!-- Schema: LocalBusiness -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":["LocalBusiness","GeneralContractor"],
-  "@id":"https://reformplan.es/#business",
+  "@id":"https://reformplan.vercel.app/#business",
   "name":"Reform Plan",
-  "description":"Empresa de reformas integrales en Gran Canaria. Presupuesto cerrado por escrito, plazo garantizado, sin sorpresas.",
-  "url":"https://reformplan.es/",
+  "description":"Empresa de reformas integrales en Gran Canaria. Presupuesto cerrado por escrito, plazo garantizado y un solo equipo para toda la obra.",
+  "url":"https://reformplan.vercel.app/",
   "telephone":"+34633122142",
   "email":"reformplan@gmail.com",
-  "foundingDate":"2014",
   "priceRange":"€€",
-  "openingHours":["Mo-Sa 09:00-19:00"],
-  "image":"https://reformplan.es/imagenes/hero.webp",
-  "logo":"https://reformplan.es/imagenes/logo_reform-removebg-preview (1).png",
+  "image":"https://reformplan.vercel.app/imagenes/hero.webp",
+  "logo":"https://reformplan.vercel.app/imagenes/logo-reform-plan.png",
   "address":{
     "@type":"PostalAddress",
-    "streetAddress":"Las Palmas de Gran Canaria",
     "addressLocality":"Las Palmas de Gran Canaria",
     "addressRegion":"Las Palmas",
-    "postalCode":"35001",
     "addressCountry":"ES"
   },
   "geo":{
@@ -68,25 +64,14 @@
     "latitude":28.1235,
     "longitude":-15.4366
   },
-  "areaServed":[
-    {"@type":"City","name":"Las Palmas de Gran Canaria"},
-    {"@type":"City","name":"Telde"},
-    {"@type":"City","name":"Arucas"},
-    {"@type":"City","name":"Santa Lucía de Tirajana"},
-    {"@type":"City","name":"Maspalomas"},
-    {"@type":"City","name":"Vecindario"},
-    {"@type":"City","name":"Gáldar"},
-    {"@type":"Island","name":"Gran Canaria"}
-  ],
-  "aggregateRating":{
-    "@type":"AggregateRating",
-    "ratingValue":"4.9",
-    "reviewCount":"100",
-    "bestRating":"5"
+  "areaServed":{"@type":"AdministrativeArea","name":"Gran Canaria"},
+  "openingHoursSpecification":{
+    "@type":"OpeningHoursSpecification",
+    "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens":"09:00",
+    "closes":"19:00"
   },
-  "sameAs":[
-    "https://wa.me/34633122142"
-  ]
+  "sameAs":["https://wa.me/34633122142"]
 }
 </script>
 
@@ -98,23 +83,43 @@
   "mainEntity":[
     {
       "@type":"Question",
-      "name":"¿Hacéis presupuesto cerrado para reformas en Gran Canaria?",
-      "acceptedAnswer":{"@type":"Answer","text":"Sí. Todos nuestros presupuestos son cerrados y por escrito. El precio que acordamos es el precio final, sin sorpresas ni costes adicionales."}
+      "name":"¿Cuánto cuesta una reforma integral en Gran Canaria?",
+      "acceptedAnswer":{"@type":"Answer","text":"El coste depende sobre todo de tres cosas: los metros cuadrados de la vivienda, el estado del que partes y la calidad de los materiales que elijas. No es lo mismo actualizar un piso que está en buen estado que reformar una casa antigua donde hay que renovar fontanería y electricidad de cero. Por eso, en Reform Plan no te damos una cifra al aire por teléfono: vamos a verlo, lo medimos y te entregamos un presupuesto cerrado y detallado, gratis, para que sepas el precio real antes de comprometerte a nada."}
     },
     {
       "@type":"Question",
-      "name":"¿En qué zonas de Gran Canaria trabajáis?",
-      "acceptedAnswer":{"@type":"Answer","text":"Trabajamos en toda la isla de Gran Canaria: Las Palmas, Telde, Arucas, Gáldar, Vecindario, Santa Lucía, Maspalomas e Ingenio, entre otros municipios."}
+      "name":"¿Cuánto tarda en hacerse una reforma?",
+      "acceptedAnswer":{"@type":"Answer","text":"Depende mucho del alcance. Cambiar un baño o sustituir la bañera por un plato de ducha puede resolverse en cuestión de días; una cocina lleva un poco más; y la reforma integral de un piso entero ya se mide en semanas según la distribución y los acabados. Lo importante es que en Reform Plan te damos el plazo por escrito antes de empezar y organizamos a los gremios para cumplirlo. La razón de que muchas obras se eternicen es la mala coordinación: eso es justo lo que evitamos."}
     },
     {
       "@type":"Question",
-      "name":"¿Cuánto tarda una reforma integral en Gran Canaria?",
-      "acceptedAnswer":{"@type":"Answer","text":"El plazo depende del alcance de la obra, pero siempre establecemos una fecha de entrega por escrito que cumplimos. Un piso de 80 m² suele estar listo en 6-10 semanas."}
+      "name":"¿El presupuesto que me dais es el precio final o puede subir?",
+      "acceptedAnswer":{"@type":"Answer","text":"Es cerrado. El precio que firmamos por escrito es el que pagas al terminar. La única forma de que cambie es que seas tú quien decida añadir o modificar algo durante la obra, y aun así te lo presupuestamos aparte y solo lo hacemos si tú lo apruebas. Nunca te vas a encontrar con un «esto no estaba incluido» al final."}
     },
     {
       "@type":"Question",
-      "name":"¿Tenéis garantía en los trabajos de reforma?",
-      "acceptedAnswer":{"@type":"Answer","text":"Sí, todos nuestros trabajos incluyen garantía por escrito. Cubrimos defectos de ejecución y materiales conforme a la normativa vigente."}
+      "name":"¿Puedo reformar solo el baño o la cocina, o tengo que hacer la casa entera?",
+      "acceptedAnswer":{"@type":"Answer","text":"Solo lo que tú quieras. Mucha gente nos llama únicamente para reformar el baño, cambiar la bañera por una ducha o renovar la cocina, sin tocar nada más. En Reform Plan hacemos tanto reformas integrales como trabajos de un solo espacio, e incluso de un solo gremio si lo que necesitas es solo fontanería, electricidad, albañilería o pladur."}
+    },
+    {
+      "@type":"Question",
+      "name":"¿Trabajáis en toda Gran Canaria o solo en una zona?",
+      "acceptedAnswer":{"@type":"Answer","text":"En toda la isla. Damos servicio en Las Palmas de Gran Canaria, Telde, Vecindario, Arucas, Santa Lucía, Maspalomas y el resto de municipios. Si tu casa está en una zona algo más apartada y tienes dudas, lo mejor es que nos llames y te lo confirmamos al momento."}
+    },
+    {
+      "@type":"Question",
+      "name":"¿Hacéis reformas de pisos para alquilar o para vender?",
+      "acceptedAnswer":{"@type":"Answer","text":"Sí, y de hecho trabajamos a menudo con propietarios e inversores. Cuando reformas para alquilar o vender priorizamos un acabado atractivo y resistente con la inversión justa, y sobre todo que esté listo cuanto antes. Si no vives cerca, gestionamos la obra de principio a fin sin que tengas que aparecer por allí."}
+    },
+    {
+      "@type":"Question",
+      "name":"¿El presupuesto y la visita tienen algún coste o compromiso?",
+      "acceptedAnswer":{"@type":"Answer","text":"Ninguno. Vamos a tu vivienda, vemos qué quieres hacer, lo medimos y te entregamos el presupuesto cerrado totalmente gratis y sin que te comprometas a nada. Puedes usarlo para compararnos con otras empresas con total tranquilidad."}
+    },
+    {
+      "@type":"Question",
+      "name":"¿Qué pasa si durante la obra aparece un problema oculto, como una tubería en mal estado?",
+      "acceptedAnswer":{"@type":"Answer","text":"Te lo decimos en cuanto lo detectamos, con transparencia, y te explicamos las opciones antes de tocar nada. Lo que no hacemos es arreglarlo por nuestra cuenta y meterte el coste por sorpresa en la factura: te lo presupuestamos aparte, decides tú, y queda todo por escrito."}
     }
   ]
 }
@@ -124,7 +129,7 @@
 
 <!-- PRELOADER -->
 <div id="preloader">
-  <img src="imagenes/logo_reform-removebg-preview (1).png" alt="Reform Plan">
+  <img src="imagenes/logo-reform-plan.png" alt="Reform Plan">
 </div>
 
 <!-- NAV -->
@@ -146,7 +151,7 @@
     </nav>
 
     <a href="#top" class="nav-brand">
-      <img src="imagenes/logo_reform-removebg-preview (1).png" alt="Reformplan">
+      <img src="imagenes/logo-reform-plan.png" alt="Reformplan">
     </a>
 
     <nav class="nav-links right">
@@ -167,7 +172,7 @@
 <!-- Drawer móvil — fuera del header para que position:fixed funcione -->
 <div class="mobile-menu" id="mm">
   <div class="mm-header">
-    <a href="#top" class="mm-logo"><img src="imagenes/logo_reform-removebg-preview (1).png" alt="Reformplan"></a>
+    <a href="#top" class="mm-logo"><img src="imagenes/logo-reform-plan.png" alt="Reformplan"></a>
     <button class="mm-close" data-burger aria-label="Cerrar">✕</button>
   </div>
   <nav class="mm-nav">
@@ -255,9 +260,9 @@
     </div>
     <div class="services-grid">
       <div class="svc"><div class="svc-photo"><span class="tag"><span class="dot"></span>Equipo trabajando</span><img src="imagenes/vivienda.webp" alt="Reformas integrales de viviendas en Gran Canaria" loading="lazy"></div><div class="svc-body"><h3>Vivienda completa</h3><p>Renovamos tu piso o casa al completo: distribución, instalaciones, suelos y acabados. Una sola empresa, un solo presupuesto cerrado.</p></div></div>
-      <div class="svc"><div class="svc-photo"><span class="tag"><span class="dot"></span>Equipo trabajando</span><img src="imagenes/baño_canario.webp" alt="Reformas de baños en Gran Canaria" loading="lazy"></div><div class="svc-body"><h3>Baños</h3><p>Cambiamos tu baño entero o sustituimos la bañera por un plato de ducha. Te decimos el precio final antes de empezar.</p></div></div>
+      <div class="svc"><div class="svc-photo"><span class="tag"><span class="dot"></span>Equipo trabajando</span><img src="imagenes/bano-gran-canaria.webp" alt="Reformas de baños en Gran Canaria" loading="lazy"></div><div class="svc-body"><h3>Baños</h3><p>Cambiamos tu baño entero o sustituimos la bañera por un plato de ducha. Te decimos el precio final antes de empezar.</p></div></div>
       <div class="svc"><div class="svc-photo"><span class="tag"><span class="dot"></span>Equipo trabajando</span><img src="imagenes/cocina.webp" alt="Reformas de cocinas en Gran Canaria" loading="lazy"></div><div class="svc-body"><h3>Cocinas</h3><p>Reforma integral de cocina con instalación, alicatado y acabados. Diseñamos el espacio para que ganes orden y aprovechamiento real.</p></div></div>
-      <div class="svc"><div class="svc-photo"><span class="tag"><span class="dot"></span>Equipo trabajando</span><img src="imagenes/albañil.webp" alt="Albañilería en Gran Canaria" loading="lazy"></div><div class="svc-body"><h3>Albañilería</h3><p>Demoliciones, tabiques, solados, alicatados y acabados. Trabajos de obra con materiales de calidad y mano de obra propia.</p></div></div>
+      <div class="svc"><div class="svc-photo"><span class="tag"><span class="dot"></span>Equipo trabajando</span><img src="imagenes/albanileria-gran-canaria.webp" alt="Albañilería en Gran Canaria" loading="lazy"></div><div class="svc-body"><h3>Albañilería</h3><p>Demoliciones, tabiques, solados, alicatados y acabados. Trabajos de obra con materiales de calidad y mano de obra propia.</p></div></div>
       <div class="svc"><div class="svc-photo"><span class="tag"><span class="dot"></span>Equipo trabajando</span><img src="imagenes/fontaneria.webp" alt="Fontanería en Gran Canaria" loading="lazy"></div><div class="svc-body"><h3>Fontanería</h3><p>Instalación, reforma y reparación de tuberías, grifería y sanitarios. Solucionamos averías y renovamos instalaciones completas.</p></div></div>
       <a class="svc" href="https://wa.me/34633122142" target="_blank" rel="noopener"><div class="svc-photo" style="background:linear-gradient(135deg,#0c0c0c,#2a2a2a);display:flex;align-items:center;justify-content:center"><span style="color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;gap:10px">¿Otra cosa? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></div><div class="svc-body"><h3>Cuéntanos qué necesitas</h3><p>Si es reforma, lo hacemos. Si no, te decimos quién.</p><span class="arrow">Escribir por WhatsApp →</span></div></a>
     </div>
@@ -291,8 +296,8 @@
         <div class="ba-track">
           <article class="ba">
             <div class="ba-slider" data-pos="50">
-              <div class="layer before" style="background-image:url('imagenes/Cuarto1Antes.jpeg');background-size:cover;background-position:center"></div>
-              <div class="layer after" style="background-image:url('imagenes/Cuarto1Despues.jpeg');background-size:cover;background-position:center"></div>
+              <div class="layer before" role="img" aria-label="Dormitorio antes de la reforma en Gran Canaria" style="background-image:url('imagenes/dormitorio-antes-1.jpeg');background-size:cover;background-position:center"></div>
+              <div class="layer after" role="img" aria-label="Dormitorio reformado en Gran Canaria" style="background-image:url('imagenes/dormitorio-despues-1.jpeg');background-size:cover;background-position:center"></div>
               <span class="lbl l-before">ANTES</span>
               <span class="lbl l-after">DESPUÉS</span>
               <div class="handle"></div>
@@ -302,8 +307,8 @@
           </article>
           <article class="ba">
             <div class="ba-slider" data-pos="50">
-              <div class="layer before" style="background-image:url('imagenes/Cuarto2Antes.jpeg');background-size:cover;background-position:center"></div>
-              <div class="layer after" style="background-image:url('imagenes/Cuarto2Despues.jpeg');background-size:cover;background-position:center"></div>
+              <div class="layer before" role="img" aria-label="Dormitorio antes de la reforma en Gran Canaria" style="background-image:url('imagenes/dormitorio-antes-2.jpeg');background-size:cover;background-position:center"></div>
+              <div class="layer after" role="img" aria-label="Dormitorio reformado en Gran Canaria" style="background-image:url('imagenes/dormitorio-despues-2.jpeg');background-size:cover;background-position:center"></div>
               <span class="lbl l-before">ANTES</span>
               <span class="lbl l-after">DESPUÉS</span>
               <div class="handle"></div>
@@ -313,8 +318,8 @@
           </article>
           <article class="ba">
             <div class="ba-slider" data-pos="50">
-              <div class="layer before" style="background-image:url('imagenes/Fachada1Antes.jpeg');background-size:cover;background-position:center"></div>
-              <div class="layer after" style="background-image:url('imagenes/Fachada2Despues.jpeg');background-size:cover;background-position:center"></div>
+              <div class="layer before" role="img" aria-label="Fachada de vivienda antes de la reforma en Gran Canaria" style="background-image:url('imagenes/fachada-antes.jpeg');background-size:cover;background-position:center"></div>
+              <div class="layer after" role="img" aria-label="Fachada reformada en Gran Canaria" style="background-image:url('imagenes/fachada-despues.jpeg');background-size:cover;background-position:center"></div>
               <span class="lbl l-before">ANTES</span>
               <span class="lbl l-after">DESPUÉS</span>
               <div class="handle"></div>
@@ -324,8 +329,8 @@
           </article>
           <article class="ba">
             <div class="ba-slider" data-pos="50">
-              <div class="layer before" style="background-image:url('imagenes/Bano1Antes.jpeg');background-size:cover;background-position:center"></div>
-              <div class="layer after" style="background-image:url('imagenes/Bano1Despues.jpeg');background-size:cover;background-position:center"></div>
+              <div class="layer before" role="img" aria-label="Baño antes de la reforma en Gran Canaria" style="background-image:url('imagenes/bano-antes.jpeg');background-size:cover;background-position:center"></div>
+              <div class="layer after" role="img" aria-label="Reforma de baño en Gran Canaria, antes y después" style="background-image:url('imagenes/bano-despues.jpeg');background-size:cover;background-position:center"></div>
               <span class="lbl l-before">ANTES</span>
               <span class="lbl l-after">DESPUÉS</span>
               <div class="handle"></div>
@@ -463,7 +468,7 @@
             <b>María J.</b>
             <span class="rev-date">hace 2 semanas</span>
           </div>
-          <svg class="rev-google" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          <svg class="rev-google" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" style="fill:#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" style="fill:#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" style="fill:#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" style="fill:#EA4335"/></svg>
         </div>
         <div class="rev-stars">★★★★★</div>
         <p>"Pedí presupuesto a tres empresas y fueron los únicos que me lo dieron cerrado y por escrito. La obra salió tal cual."</p>
@@ -476,7 +481,7 @@
             <b>Andrés C.</b>
             <span class="rev-date">hace 1 mes</span>
           </div>
-          <svg class="rev-google" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          <svg class="rev-google" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" style="fill:#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" style="fill:#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" style="fill:#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" style="fill:#EA4335"/></svg>
         </div>
         <div class="rev-stars">★★★★★</div>
         <p>"Reformé un piso para alquilar y lo tuvieron listo rapidísimo. Pude empezar a alquilar antes de lo previsto."</p>
@@ -489,7 +494,7 @@
             <b>Laura R.</b>
             <span class="rev-date">hace 3 semanas</span>
           </div>
-          <svg class="rev-google" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          <svg class="rev-google" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" style="fill:#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" style="fill:#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" style="fill:#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" style="fill:#EA4335"/></svg>
         </div>
         <div class="rev-stars">★★★★★</div>
         <p>"Nos cambiaron el baño en una semana sin dejarnos la casa patas arriba. Trabajo limpio y serio."</p>
@@ -593,7 +598,7 @@
   <div class="container">
     <div class="foot">
       <div>
-        <div class="foot-brand"><img src="imagenes/logo_reform-removebg-preview (1).png" alt="Reformplan"></div>
+        <div class="foot-brand"><img src="imagenes/logo-reform-plan.png" alt="Reformplan"></div>
         <p style="font-size:13px;color:var(--muted);max-width:34ch">Reform Plan — Reformas en Gran Canaria. Presupuesto cerrado, plazo garantizado, empresa legal con factura y garantía.</p>
         <p style="font-size:12px;color:var(--muted);margin-top:6px">Zona de servicio: toda la isla de Gran Canaria</p>
       </div>
@@ -624,7 +629,7 @@
           <li><a href="tel:+34633122142">633 122 142</a></li>
           <li><a href="mailto:reformplan@gmail.com">reformplan@gmail.com</a></li>
           <li>Las Palmas de Gran Canaria</li>
-          <li>Canarias · Barcelona</li>
+          <li>Gran Canaria</li>
         </ul>
       </div>
     </div>

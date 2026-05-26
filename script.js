@@ -85,12 +85,13 @@ spinTargets.forEach(t=>{
 
 const navEl=document.querySelector('.nav');
 const onScroll=()=>{
+  const sy=window.scrollY||window.pageYOffset||0;
   const h=document.documentElement;
-  const max=h.scrollHeight-h.clientHeight;
-  const p=h.scrollTop/max;
+  const max=h.scrollHeight-h.clientHeight||1;
+  const p=sy/max;
   bar.style.width=(p*100)+'%';
-  document.documentElement.style.setProperty('--sr', h.scrollTop*0.15);
-  if(navEl)navEl.classList.toggle('scrolled', h.scrollTop>40);
+  h.style.setProperty('--sr', sy*0.15);
+  if(navEl)navEl.classList.toggle('scrolled', sy>40);
 };
 window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 

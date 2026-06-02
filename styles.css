@@ -9,7 +9,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-body{max-width:100vw}
+body{max-width:100vw;overflow-x:hidden}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 
 /* Preloader */
@@ -309,10 +309,10 @@ section{padding:90px 0}
 .ba-slider .after .ph{color:rgba(0,0,0,.35)}
 .ba-slider .lbl{position:absolute;top:12px;background:#fff;color:#0c0c0c;font-size:10px;letter-spacing:.18em;font-weight:700;padding:5px 9px;border-radius:999px;border:1px solid var(--line);pointer-events:none;z-index:3}
 .ba-slider .lbl.l-before{left:12px}
-.ba-slider .lbl.l-after{right:12px;background:var(--ink);color:#fff;border-color:var(--ink)}
-.ba-slider .handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.15);transform:translateX(-50%);z-index:4;pointer-events:none}
-.ba-slider .knob{position:absolute;top:50%;left:var(--pos,50%);transform:translate(-50%,-50%);width:46px;height:46px;background:#fff;border-radius:50%;box-shadow:0 6px 20px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;z-index:5;pointer-events:none}
-.ba-slider .knob svg{width:22px;height:22px;color:var(--ink)}
+.ba-slider .lbl.l-after{right:12px;background:var(--red);color:#fff;border-color:var(--red)}
+.ba-slider .handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:var(--red);box-shadow:0 0 8px rgba(211,32,39,.4);transform:translateX(-50%);z-index:4;pointer-events:none}
+.ba-slider .knob{position:absolute;top:50%;left:var(--pos,50%);transform:translate(-50%,-50%);width:46px;height:46px;background:#fff;border-radius:50%;box-shadow:0 0 0 3px var(--red),0 6px 20px rgba(211,32,39,.3);display:flex;align-items:center;justify-content:center;z-index:5;pointer-events:none}
+.ba-slider .knob svg{width:22px;height:22px;color:var(--red)}
 .ba-slider .hint{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.65);color:#fff;font-size:11px;font-weight:600;letter-spacing:.1em;padding:6px 12px;border-radius:999px;z-index:3;pointer-events:none;animation:fade 3s ease 1.5s forwards}
 @keyframes fade{to{opacity:0}}
 .ba-cap{padding:16px 18px;display:flex;justify-content:space-between;align-items:center}
@@ -598,6 +598,9 @@ footer{border-top:1px solid var(--line);padding:50px 0 110px;color:var(--muted);
    RESPONSIVE MÓVIL — ≤720px
    ============================================= */
 @media(max-width:720px){
+  /* Ocultar decoraciones que causan overflow horizontal */
+  .tool-spin{display:none}
+
   /* Espaciado global de secciones */
   section{padding:52px 0}
   .container{padding:0 16px}

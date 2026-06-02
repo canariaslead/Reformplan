@@ -585,7 +585,18 @@ footer{border-top:1px solid var(--line);padding:50px 0 110px;color:var(--muted);
 .svc-popup-items{list-style:none;padding:0;margin:0 0 22px;display:flex;flex-direction:column;gap:8px}
 .svc-popup-items li{font-size:14px;color:#3a3a3a;display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--soft);border-radius:10px}
 .svc-popup-items li::before{content:"";width:6px;height:6px;background:var(--red);border-radius:50%;flex-shrink:0}
-.svc-popup-cta{display:inline-flex;align-items:center;gap:8px}
+.svc-popup-cta{display:flex;width:100%;justify-content:center;margin-top:4px}
+.svc-popup-note{text-align:center;font-size:12px;color:var(--muted);margin:8px 0 0;font-family:'Poppins',sans-serif}
+.svc-popup-section-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:18px 0 10px}
+.svc-popup-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.svc-popup-pill{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--soft);border:1px solid var(--line);color:var(--ink);font-family:'Poppins',sans-serif}
+.svc-popup-faq{display:flex;flex-direction:column;gap:6px;margin-bottom:20px}
+.svc-popup-faq-item{border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.svc-popup-faq-item summary{padding:11px 14px;font-size:13px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px;font-family:'Poppins',sans-serif}
+.svc-popup-faq-item summary::-webkit-details-marker{display:none}
+.svc-popup-faq-item summary::after{content:'+';color:var(--red);font-size:18px;font-weight:400;flex-shrink:0;transition:transform .2s}
+.svc-popup-faq-item[open] summary::after{transform:rotate(45deg)}
+.svc-popup-faq-item p{margin:0;padding:0 14px 12px;font-size:13px;color:#555;line-height:1.55}
 .svc-popup-handle{display:none;width:36px;height:4px;background:#e0ddd8;border-radius:999px;margin:10px auto 0;flex-shrink:0}
 @media(max-width:720px){.svc-popup-handle{display:block}}
 .svc:not(a){cursor:pointer}

@@ -206,19 +206,69 @@ document.querySelectorAll('.ba-slider').forEach(s=>{
 // Service popup
 (function(){
   const svcData={
-    'Vivienda completa':['Distribución y tabiquería nueva','Instalación eléctrica y fontanería','Suelos, alicatados y pinturas','Carpintería y acabados interiores','Presupuesto cerrado, sin sorpresas'],
-    'Baños':['Demolición y obra civil','Plato de ducha o sustitución de bañera','Alicatado completo desde cero','Grifería y sanitarios nuevos','Electricidad y ventilación incluidas'],
-    'Cocinas':['Diseño para aprovechar el espacio','Instalación de muebles y encimera','Alicatado y suelo nuevos','Fontanería y electricidad','Electrodomésticos si se solicitan'],
-    'Albañilería':['Demoliciones y apertura de huecos','Tabiquería y cielos rasos','Solados y alicatados','Enfoscados y revocos','Materiales de primera calidad'],
-    'Fontanería':['Detección y reparación de averías','Cambio o renovación de tuberías','Instalación de grifería y sanitarios','Calentadores y termos','Certificados de instalación'],
-    'Electricidad':['Instalación eléctrica completa','Cuadros eléctricos y automatismos','Puntos de luz y enchufes','Certificados de instalación','Adecuación a normativa vigente']
+    'Vivienda completa':{
+      desc:'Reformamos tu piso o casa al completo en Gran Canaria: redistribuimos espacios, renovamos instalaciones eléctricas y de fontanería, cambiamos suelos, alicatados, pinturas y carpintería. Un solo equipo, un solo presupuesto cerrado y sin sorpresas al final de la obra.',
+      precio:'Desde 12.000 €',plazo:'4 – 10 semanas',
+      items:['Distribución y tabiquería nueva','Instalación eléctrica completa','Fontanería y sanitarios','Suelos y alicatados','Pinturas y acabados','Carpintería interior','Coordinación de todos los gremios'],
+      faq:[
+        {q:'¿Puedo vivir en casa durante la obra?',a:'Depende del alcance. En reformas integrales lo habitual es desalojar la vivienda; te lo indicamos antes de empezar.'},
+        {q:'¿El precio es definitivo?',a:'Sí. Te entregamos presupuesto cerrado por escrito antes de firmar. Sin "imprevistos" que inflen la factura.'}
+      ]
+    },
+    'Baños':{
+      desc:'Reformamos baños en Gran Canaria de principio a fin: demolición, obra, alicatado completo, instalación de ducha o bañera, grifería, sanitarios y electricidad. Precio cerrado antes de empezar y obra lista en pocos días.',
+      precio:'Desde 2.500 €',plazo:'5 – 10 días',
+      items:['Demolición y obra civil','Plato de ducha o sustitución de bañera','Alicatado completo desde cero','Grifería y sanitarios nuevos','Electricidad y ventilación','Mamparas si se solicitan'],
+      faq:[
+        {q:'¿Cuánto tarda una reforma de baño?',a:'Un baño estándar lo terminamos en 5-10 días laborables, según el estado de partida y los materiales elegidos.'},
+        {q:'¿Sustituís solo la bañera por ducha?',a:'Sí, es uno de los trabajos más frecuentes. Lo hacemos en 2-3 días con presupuesto cerrado.'}
+      ]
+    },
+    'Cocinas':{
+      desc:'Hacemos reformas integrales de cocinas en Gran Canaria: diseñamos el aprovechamiento del espacio, instalamos muebles y encimera, alicatamos, cambiamos suelo y resolvemos fontanería y electricidad. Todo en un solo presupuesto.',
+      precio:'Desde 3.500 €',plazo:'1 – 2 semanas',
+      items:['Diseño y distribución del espacio','Instalación de muebles y encimera','Alicatado y suelo nuevos','Fontanería y electricidad','Campana y fregadero','Electrodomésticos si se solicitan'],
+      faq:[
+        {q:'¿Puedo usar la cocina mientras dura la reforma?',a:'No. La obra requiere cortar instalaciones. Normalmente entre 1 y 2 semanas sin cocina.'},
+        {q:'¿Incluís los muebles?',a:'Podemos gestionar el suministro de muebles o trabajar con los que ya hayas comprado, como prefieras.'}
+      ]
+    },
+    'Albañilería':{
+      desc:'Realizamos todo tipo de trabajos de albañilería en Gran Canaria: demoliciones, apertura de huecos, tabiquería de pladur o ladrillo, solados, alicatados, enfoscados y revocos. Mano de obra propia y materiales de primera calidad.',
+      precio:'Presupuesto a medida',plazo:'Según alcance',
+      items:['Demoliciones y apertura de huecos','Tabiquería de ladrillo o pladur','Solados y alicatados','Enfoscados y revocos','Cielos rasos y escayola','Impermeabilizaciones'],
+      faq:[
+        {q:'¿Hacéis solo albañilería o también otros gremios?',a:'Podemos encargarnos solo de albañilería o coordinar también electricidad, fontanería y pintura si lo necesitas.'},
+        {q:'¿Retiráis los escombros?',a:'Sí. La retirada y gestión de escombros está incluida en el presupuesto.'}
+      ]
+    },
+    'Fontanería':{
+      desc:'Servicio de fontanería en Gran Canaria: instalación, reforma y reparación de tuberías, grifería y sanitarios. Detectamos y solucionamos averías, renovamos instalaciones completas y emitimos certificados de instalación.',
+      precio:'Desde 80 € / hora',plazo:'1 día – 1 semana',
+      items:['Detección y reparación de averías','Cambio o renovación de tuberías','Instalación de grifería y sanitarios','Calentadores, termos y acumuladores','Certificados de instalación','Urgencias disponibles'],
+      faq:[
+        {q:'¿Atendéis averías urgentes?',a:'Sí. Cubrimos urgencias de fontanería en Gran Canaria. Contáctanos y te decimos la disponibilidad.'},
+        {q:'¿Emitís certificado de instalación?',a:'Sí. Toda instalación nueva incluye certificado de instalación eléctrica o de fontanería según corresponda.'}
+      ]
+    },
+    'Electricidad':{
+      desc:'Instalaciones eléctricas en Gran Canaria: instalación completa en obra nueva o reforma, cuadros eléctricos, puntos de luz, enchufes y automatismos. Trabajo con factura, seguro y certificado de instalación.',
+      precio:'Presupuesto a medida',plazo:'1 – 5 días',
+      items:['Instalación eléctrica completa','Cuadros eléctricos y automatismos','Puntos de luz y enchufes','Domótica básica si se solicita','Certificado de instalación eléctrica','Adecuación a normativa vigente'],
+      faq:[
+        {q:'¿Sois electricistas autorizados?',a:'Sí. Trabajamos con instaladores autorizados y emitimos boletín eléctrico homologado.'},
+        {q:'¿Hacéis instalaciones para comunidades?',a:'Sí, hacemos instalaciones tanto en viviendas particulares como en comunidades de propietarios.'}
+      ]
+    }
   };
   const popup=document.getElementById('svc-popup');
   if(!popup)return;
   const pImg=document.getElementById('svc-popup-img');
   const pTitle=document.getElementById('svc-popup-title');
   const pDesc=document.getElementById('svc-popup-desc');
+  const pMeta=document.getElementById('svc-popup-meta');
   const pItems=document.getElementById('svc-popup-items');
+  const pFaq=document.getElementById('svc-popup-faq');
   const pClose=popup.querySelector('.svc-popup-close');
   const pBackdrop=popup.querySelector('.svc-popup-backdrop');
   const pPanel=popup.querySelector('.svc-popup-panel');
@@ -226,14 +276,15 @@ document.querySelectorAll('.ba-slider').forEach(s=>{
   function openPopup(card){
     const img=card.querySelector('.svc-photo img');
     const h3=card.querySelector('h3');
-    const p=card.querySelector('p');
     const title=h3?h3.textContent:'';
-    const items=svcData[title]||[];
+    const d=svcData[title]||{};
     pImg.src=img?img.src:'';
     pImg.alt=img?img.alt:'';
     pTitle.textContent=title;
-    pDesc.textContent=p?p.textContent:'';
-    pItems.innerHTML=items.map(i=>`<li>${i}</li>`).join('');
+    pDesc.textContent=d.desc||(card.querySelector('p')||{}).textContent||'';
+    pMeta.innerHTML=d.precio?`<span class="svc-popup-pill">💰 ${d.precio}</span><span class="svc-popup-pill">⏱ ${d.plazo}</span>`:'';
+    pItems.innerHTML=(d.items||[]).map(i=>`<li>${i}</li>`).join('');
+    pFaq.innerHTML=(d.faq||[]).map(f=>`<details class="svc-popup-faq-item"><summary>${f.q}</summary><p>${f.a}</p></details>`).join('');
     popup.setAttribute('aria-label',title);
     prevFocus=document.activeElement;
     popup.style.display='flex';

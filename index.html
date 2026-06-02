@@ -139,10 +139,10 @@
       <div class="has-drop">
         <a href="#servicios">Servicios ▾</a>
         <div class="drop">
-          <a href="#servicios">Vivienda completa</a>
-          <a href="#servicios">Baños</a>
-          <a href="#servicios">Cocinas</a>
-          <a href="#servicios">Albañilería y más</a>
+          <a href="#servicios" data-open-svc="Vivienda completa">Vivienda completa</a>
+          <a href="#servicios" data-open-svc="Baños">Baños</a>
+          <a href="#servicios" data-open-svc="Cocinas">Cocinas</a>
+          <a href="#servicios" data-open-svc="Albañilería">Albañilería y más</a>
         </div>
       </div>
       <a href="#trabajos">Trabajos</a>
@@ -178,10 +178,10 @@
   <nav class="mm-nav">
     <details class="mm-drop">
       <summary>Servicios <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></summary>
-      <a href="#servicios">Vivienda completa</a>
-      <a href="#servicios">Baños</a>
-      <a href="#servicios">Cocinas</a>
-      <a href="#servicios">Albañilería y más</a>
+      <a href="#servicios" data-open-svc="Vivienda completa">Vivienda completa</a>
+      <a href="#servicios" data-open-svc="Baños">Baños</a>
+      <a href="#servicios" data-open-svc="Cocinas">Cocinas</a>
+      <a href="#servicios" data-open-svc="Albañilería">Albañilería y más</a>
     </details>
     <a href="#trabajos">Trabajos</a>
     <a href="#zonas">Zonas</a>
@@ -671,7 +671,7 @@
       <h3 id="svc-popup-title"></h3>
       <p id="svc-popup-desc"></p>
       <ul id="svc-popup-items" class="svc-popup-items"></ul>
-      <a href="#contacto" class="btn svc-popup-cta" onclick="document.getElementById('svc-popup').setAttribute('hidden','');document.body.style.overflow=''">Pedir presupuesto</a>
+      <a href="#contacto" class="btn svc-popup-cta" id="svc-popup-cta-btn">Pedir presupuesto</a>
     </div>
   </div>
 </div>

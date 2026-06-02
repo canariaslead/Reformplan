@@ -253,6 +253,23 @@ document.querySelectorAll('.ba-slider').forEach(s=>{
   document.querySelectorAll('.svc:not(a)').forEach(card=>{
     card.addEventListener('click',()=>openPopup(card));
   });
+
+  // Nav links con data-open-svc abren el popup del servicio correspondiente
+  document.querySelectorAll('[data-open-svc]').forEach(link=>{
+    link.addEventListener('click',function(e){
+      const title=this.dataset.openSvc;
+      const card=Array.from(document.querySelectorAll('.svc:not(a)')).find(c=>{
+        const h3=c.querySelector('h3');
+        return h3&&h3.textContent.trim()===title;
+      });
+      if(card){e.preventDefault();openPopup(card);}
+    });
+  });
+
+  // Botón "Pedir presupuesto" dentro del popup cierra y navega a #contacto
+  const pCta=document.getElementById('svc-popup-cta-btn');
+  if(pCta)pCta.addEventListener('click',closePopup);
+
   pClose.addEventListener('click',closePopup);
   pBackdrop.addEventListener('click',closePopup);
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&popup.style.display==='flex')closePopup();});

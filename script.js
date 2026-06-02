@@ -236,18 +236,16 @@ document.querySelectorAll('.ba-slider').forEach(s=>{
     pItems.innerHTML=items.map(i=>`<li>${i}</li>`).join('');
     popup.setAttribute('aria-label',title);
     prevFocus=document.activeElement;
-    popup.removeAttribute('hidden');
-    requestAnimationFrame(()=>popup.classList.add('is-open'));
+    popup.style.display='flex';
+    popup.offsetHeight; // force reflow — ensures transition fires from opacity:0
+    popup.classList.add('is-open');
     document.body.style.overflow='hidden';
     pClose.focus();
   }
   function closePopup(){
     popup.classList.remove('is-open');
-    popup.classList.add('is-closing');
-    pPanel.addEventListener('transitionend',function done(){
-      pPanel.removeEventListener('transitionend',done);
-      popup.classList.remove('is-closing');
-      popup.setAttribute('hidden','');
+    pPanel.addEventListener('transitionend',function(){
+      popup.style.display='none';
       document.body.style.overflow='';
       if(prevFocus)prevFocus.focus();
     },{once:true});
@@ -257,7 +255,7 @@ document.querySelectorAll('.ba-slider').forEach(s=>{
   });
   pClose.addEventListener('click',closePopup);
   pBackdrop.addEventListener('click',closePopup);
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!popup.hasAttribute('hidden'))closePopup();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&popup.style.display==='flex')closePopup();});
 })();
 
 // Carousel

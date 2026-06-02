@@ -203,6 +203,63 @@ document.querySelectorAll('.ba-slider').forEach(s=>{
   window.addEventListener('touchend',end);
 });
 
+// Service popup
+(function(){
+  const svcData={
+    'Vivienda completa':['Distribución y tabiquería nueva','Instalación eléctrica y fontanería','Suelos, alicatados y pinturas','Carpintería y acabados interiores','Presupuesto cerrado, sin sorpresas'],
+    'Baños':['Demolición y obra civil','Plato de ducha o sustitución de bañera','Alicatado completo desde cero','Grifería y sanitarios nuevos','Electricidad y ventilación incluidas'],
+    'Cocinas':['Diseño para aprovechar el espacio','Instalación de muebles y encimera','Alicatado y suelo nuevos','Fontanería y electricidad','Electrodomésticos si se solicitan'],
+    'Albañilería':['Demoliciones y apertura de huecos','Tabiquería y cielos rasos','Solados y alicatados','Enfoscados y revocos','Materiales de primera calidad'],
+    'Fontanería':['Detección y reparación de averías','Cambio o renovación de tuberías','Instalación de grifería y sanitarios','Calentadores y termos','Certificados de instalación'],
+    'Electricidad':['Instalación eléctrica completa','Cuadros eléctricos y automatismos','Puntos de luz y enchufes','Certificados de instalación','Adecuación a normativa vigente']
+  };
+  const popup=document.getElementById('svc-popup');
+  if(!popup)return;
+  const pImg=document.getElementById('svc-popup-img');
+  const pTitle=document.getElementById('svc-popup-title');
+  const pDesc=document.getElementById('svc-popup-desc');
+  const pItems=document.getElementById('svc-popup-items');
+  const pClose=popup.querySelector('.svc-popup-close');
+  const pBackdrop=popup.querySelector('.svc-popup-backdrop');
+  const pPanel=popup.querySelector('.svc-popup-panel');
+  let prevFocus;
+  function openPopup(card){
+    const img=card.querySelector('.svc-photo img');
+    const h3=card.querySelector('h3');
+    const p=card.querySelector('p');
+    const title=h3?h3.textContent:'';
+    const items=svcData[title]||[];
+    pImg.src=img?img.src:'';
+    pImg.alt=img?img.alt:'';
+    pTitle.textContent=title;
+    pDesc.textContent=p?p.textContent:'';
+    pItems.innerHTML=items.map(i=>`<li>${i}</li>`).join('');
+    popup.setAttribute('aria-label',title);
+    prevFocus=document.activeElement;
+    popup.removeAttribute('hidden');
+    requestAnimationFrame(()=>popup.classList.add('is-open'));
+    document.body.style.overflow='hidden';
+    pClose.focus();
+  }
+  function closePopup(){
+    popup.classList.remove('is-open');
+    popup.classList.add('is-closing');
+    pPanel.addEventListener('transitionend',function done(){
+      pPanel.removeEventListener('transitionend',done);
+      popup.classList.remove('is-closing');
+      popup.setAttribute('hidden','');
+      document.body.style.overflow='';
+      if(prevFocus)prevFocus.focus();
+    },{once:true});
+  }
+  document.querySelectorAll('.svc:not(a)').forEach(card=>{
+    card.addEventListener('click',()=>openPopup(card));
+  });
+  pClose.addEventListener('click',closePopup);
+  pBackdrop.addEventListener('click',closePopup);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!popup.hasAttribute('hidden'))closePopup();});
+})();
+
 // Carousel
 (function(){
   const track=document.querySelector('.ba-track');

@@ -564,3 +564,30 @@ footer{border-top:1px solid var(--line);padding:50px 0 110px;color:var(--muted);
 /* Hexágono decorativo en fotos de servicios — esquina */
 .svc-photo{position:relative}
 .svc-photo::after{content:"";position:absolute;bottom:-1px;right:-1px;width:40px;height:40px;background:linear-gradient(135deg,transparent 50%,var(--red) 50%);opacity:.6}
+
+/* SERVICE POPUP */
+.svc-popup{position:fixed;inset:0;z-index:900;display:flex;align-items:center;justify-content:center;padding:16px}
+.svc-popup[hidden]{display:none}
+.svc-popup-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.52);opacity:0;transition:opacity 280ms ease-out}
+.svc-popup-panel{position:relative;background:#fff;border-radius:20px;width:100%;max-width:560px;max-height:90vh;overflow:hidden;display:flex;flex-direction:column;opacity:0;transform:translateY(12px);filter:blur(4px);transition:opacity 320ms cubic-bezier(0.16,1,0.3,1),transform 320ms cubic-bezier(0.16,1,0.3,1),filter 320ms cubic-bezier(0.16,1,0.3,1)}
+.svc-popup.is-open .svc-popup-backdrop{opacity:1}
+.svc-popup.is-open .svc-popup-panel{opacity:1;transform:translateY(0);filter:blur(0)}
+.svc-popup.is-closing .svc-popup-backdrop{opacity:0;transition-duration:200ms;transition-timing-function:ease-in}
+.svc-popup.is-closing .svc-popup-panel{opacity:0;transform:translateY(-8px);filter:blur(4px);transition-duration:200ms;transition-timing-function:ease-in}
+.svc-popup-photo{aspect-ratio:16/9;overflow:hidden;flex-shrink:0}
+.svc-popup-photo img{width:100%;height:100%;object-fit:cover}
+.svc-popup-close{position:absolute;top:12px;right:12px;z-index:1;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border:none;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.18);transition:background .15s,transform .15s}
+.svc-popup-close:hover{background:#fff;transform:scale(1.08)}
+.svc-popup-close svg{width:15px;height:15px}
+.svc-popup-content{padding:24px 26px 28px;overflow-y:auto}
+.svc-popup-content h3{font-size:22px;font-weight:700;font-family:'Poppins',sans-serif;margin:0 0 10px;color:var(--ink)}
+.svc-popup-content>p{font-size:14.5px;color:#555;line-height:1.6;margin:0 0 18px}
+.svc-popup-items{list-style:none;padding:0;margin:0 0 22px;display:flex;flex-direction:column;gap:8px}
+.svc-popup-items li{font-size:14px;color:#3a3a3a;display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--soft);border-radius:10px}
+.svc-popup-items li::before{content:"";width:6px;height:6px;background:var(--red);border-radius:50%;flex-shrink:0}
+.svc-popup-cta{display:inline-flex;align-items:center;gap:8px}
+.svc:not(a){cursor:pointer}
+@media(prefers-reduced-motion:reduce){
+  .svc-popup-panel,.svc-popup-backdrop{transition:opacity 120ms linear!important;filter:none!important;transform:none!important}
+  .svc-popup.is-closing .svc-popup-panel,.svc-popup.is-closing .svc-popup-backdrop{transition-duration:80ms!important}
+}

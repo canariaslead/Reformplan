@@ -7,14 +7,31 @@ window.addEventListener('load',()=>{
 // Contact form
 function handleForm(e){
   e.preventDefault();
+  const form=e.target;
   const ok=document.getElementById('formOk');
-  const btn=e.target.querySelector('button[type=submit]');
-  btn.textContent='Enviando…';btn.disabled=true;
-  setTimeout(()=>{
-    e.target.reset();
-    btn.textContent='Enviar solicitud de presupuesto';btn.disabled=false;
-    if(ok){ok.style.display='block';setTimeout(()=>ok.style.display='none',5000)}
-  },1000);
+  const err=document.getElementById('formErr');
+  const btn=form.querySelector('button[type=submit]');
+  const originalText=btn.innerHTML;
+  btn.innerHTML='Enviando…';btn.disabled=true;
+  if(ok)ok.style.display='none';
+  if(err)err.style.display='none';
+  fetch(form.action,{
+    method:'POST',
+    body:new FormData(form),
+    headers:{Accept:'application/json'}
+  }).then(r=>{
+    btn.innerHTML=originalText;btn.disabled=false;
+    if(r.ok){
+      form.reset();
+      if(ok){ok.style.display='block';setTimeout(()=>ok.style.display='none',6000)}
+    } else {
+      if(err)err.style.display='block';
+    }
+  }).catch(()=>{
+    btn.innerHTML=originalText;btn.disabled=false;
+    if(err)err.style.display='block';
+  });
+  return false;
 }
 
 // Mobile menu toggle

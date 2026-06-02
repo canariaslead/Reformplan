@@ -586,8 +586,118 @@ footer{border-top:1px solid var(--line);padding:50px 0 110px;color:var(--muted);
 .svc-popup-items li{font-size:14px;color:#3a3a3a;display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--soft);border-radius:10px}
 .svc-popup-items li::before{content:"";width:6px;height:6px;background:var(--red);border-radius:50%;flex-shrink:0}
 .svc-popup-cta{display:inline-flex;align-items:center;gap:8px}
+.svc-popup-handle{display:none;width:36px;height:4px;background:#e0ddd8;border-radius:999px;margin:10px auto 0;flex-shrink:0}
+@media(max-width:720px){.svc-popup-handle{display:block}}
 .svc:not(a){cursor:pointer}
 @media(prefers-reduced-motion:reduce){
   .svc-popup-panel,.svc-popup-backdrop{transition:opacity 120ms linear!important;filter:none!important;transform:none!important}
   .svc-popup.is-closing .svc-popup-panel,.svc-popup.is-closing .svc-popup-backdrop{transition-duration:80ms!important}
+}
+
+/* =============================================
+   RESPONSIVE MÓVIL — ≤720px
+   ============================================= */
+@media(max-width:720px){
+  /* Espaciado global de secciones */
+  section{padding:52px 0}
+  .container{padding:0 16px}
+  .section-head{margin-bottom:28px}
+  .section-head p{font-size:15px}
+  .section-head h2{margin-top:10px}
+
+  /* Hero */
+  .hero-badge{font-size:10.5px;padding:5px 12px;max-width:88vw;text-align:center;line-height:1.5}
+  .hero-ctas-center{gap:10px}
+  .hero-wa,.hero-outline{padding:12px 18px;font-size:14px}
+  .hero-trust-icons{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding-top:20px;margin-bottom:28px}
+  .hero-trust-icons > div{flex-direction:column;align-items:center;text-align:center;gap:5px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px 8px}
+  .hero-trust-icons svg{width:22px;height:22px}
+  .hero-trust-icons span{font-size:11px;text-align:center}
+  .hero-proof{flex-direction:column;gap:8px}
+
+  /* Servicios */
+  .svc-body{padding:14px 16px 16px}
+  .svc h3{font-size:15px}
+  .svc p{font-size:13px}
+  .svc-body .arrow{font-size:12px;padding:6px 13px}
+
+  /* Por qué */
+  .why-card{padding:20px}
+  .why-card h3{font-size:17px}
+  .why-card p{font-size:14px}
+  .why-icon{width:40px;height:40px;border-radius:10px}
+  .why-icon svg{width:20px;height:20px}
+
+  /* Proceso */
+  .process{padding:52px 0}
+  .proc-step-zone{padding:20px 0}
+  .proc-step-zone h3{font-size:18px}
+  .proc-step-zone p{font-size:13.5px}
+
+  /* Zonas */
+  .zona{padding:12px 14px;font-size:13px}
+
+  /* Reseñas */
+  .rev{padding:14px 16px}
+  .rev p{font-size:13.5px}
+
+  /* FAQ */
+  .faq-item{padding:16px 0}
+  .faq-item summary{font-size:15px}
+  .faq-item p{font-size:14px}
+
+  /* CTA / Contacto */
+  .cta .container{padding-top:52px;padding-bottom:52px}
+  .cta-box p{font-size:15px}
+  .cta-list a{padding:12px 14px;font-size:14px}
+  .cta-list a svg{width:18px;height:18px}
+
+  /* Marquee */
+  .marquee-track{font-size:18px;gap:32px}
+  .marquee{padding:14px 0}
+
+  /* Footer */
+  footer{padding:40px 0 88px}
+  .foot{gap:24px}
+
+  /* Trust bar */
+  .trust-bar{max-width:100%}
+  .trust-bar b{font-size:19px}
+  .trust-bar > div{min-width:110px;padding:14px 16px}
+
+  /* WhatsApp float — solo icono en móvil pequeño si hace falta */
+  .wa-float{padding:13px 18px;bottom:16px;right:12px}
+  .wa-float svg{width:22px;height:22px}
+
+  /* Popup → bottom sheet en móvil */
+  .svc-popup{padding:0;align-items:flex-end}
+  .svc-popup-panel{border-radius:20px 20px 0 0;max-height:88vh;max-width:100%;transform:translateY(24px);filter:none}
+  .svc-popup.is-open .svc-popup-panel{transform:translateY(0);filter:none}
+  .svc-popup.is-closing .svc-popup-panel{transform:translateY(24px);filter:none}
+  .svc-popup-photo{aspect-ratio:3/2}
+  .svc-popup-content{padding:16px 18px 28px}
+  .svc-popup-content h3{font-size:18px}
+  .svc-popup-items li{padding:8px 12px;font-size:13px}
+  .svc-popup-close{top:10px;right:10px;width:32px;height:32px}
+}
+
+/* =============================================
+   PANTALLAS MUY PEQUEÑAS — ≤420px
+   ============================================= */
+@media(max-width:420px){
+  .hero-content h1{font-size:32px}
+  .hero-badge{font-size:10px;letter-spacing:.12em}
+  .hero-wa,.hero-outline{width:100%;justify-content:center}
+  .hero-ctas-center{flex-direction:column;align-items:stretch;gap:8px}
+
+  .why-grid{grid-template-columns:1fr}
+  .zonas-grid{grid-template-columns:1fr}
+
+  .cta-list a small{font-size:11px}
+  .cta-field input,.cta-field select,.cta-field textarea{font-size:16px} /* evita zoom en iOS */
+
+  .foot{grid-template-columns:1fr 1fr}
+
+  .wa-float .lbl{display:none}
+  .wa-float{padding:14px;border-radius:50%}
 }

@@ -372,7 +372,7 @@ section{padding:90px 0}
 @media(max-width:600px){.cta-form-row{grid-template-columns:1fr}}
 .cta-field{display:flex;flex-direction:column;gap:6px}
 .cta-field label{font-size:12px;font-weight:600;color:#9c9c9c;font-family:'Poppins',sans-serif;letter-spacing:.04em;text-transform:uppercase}
-.cta-field input,.cta-field select,.cta-field textarea{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:12px 14px;color:#fff;font-size:14px;font-family:'Poppins',sans-serif;transition:border-color .2s,background .2s;outline:none;resize:none}
+.cta-field input,.cta-field select,.cta-field textarea{background:rgba(255,255,255,.07);border:1px solid transparent;border-radius:10px;padding:12px 14px;color:#fff;font-size:14px;font-family:'Poppins',sans-serif;transition:border-color .2s,background .2s;outline:none;resize:none}
 .cta-field input::placeholder,.cta-field textarea::placeholder{color:rgba(255,255,255,.3)}
 .cta-field select option{background:#1a1a1a;color:#fff}
 .cta-field input:focus,.cta-field select:focus,.cta-field textarea:focus{border-color:var(--red);background:rgba(255,255,255,.1)}

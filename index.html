@@ -693,12 +693,14 @@
 document.querySelectorAll('a[href^="#"]').forEach(function(a){
   a.addEventListener('click',function(e){
     var id=this.getAttribute('href');
-    if(id==='#')return;
+    if(!id||id==='#')return;
     var target=document.querySelector(id);
-    if(target){
-      e.preventDefault();
-      target.scrollIntoView({behavior:'smooth',block:'start'});
-    }
+    if(!target)return;
+    e.preventDefault();
+    var nav=document.querySelector('.nav');
+    var offset=nav?nav.getBoundingClientRect().height:0;
+    var top=target.getBoundingClientRect().top+window.pageYOffset-offset;
+    window.scrollTo({top:top,behavior:'smooth'});
   });
 });
 </script>

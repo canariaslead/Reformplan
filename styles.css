@@ -532,8 +532,8 @@ footer{border-top:1px solid var(--line);padding:50px 0 110px;color:var(--muted);
 
 
 /* Línea diagonal roja en section-head */
-.section-head{position:relative;padding-left:20px}
-.section-head::before{content:"";position:absolute;left:0;top:4px;width:4px;height:calc(100% - 8px);background:linear-gradient(180deg,var(--red),rgba(211,32,39,.2));border-radius:2px}
+.section-head{position:relative;padding-left:0}
+.section-head::before{display:none}
 
 /* Acento geométrico rojo en tarjetas de servicio */
 .svc{position:relative;overflow:hidden}

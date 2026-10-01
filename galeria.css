@@ -1,0 +1,45 @@
+/* =============================================
+   GALERÍA DE OBRAS (mismo estilo que el resto de la web)
+   ============================================= */
+.galeria{background:var(--bg)}
+.gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:720px){.gal-grid{grid-template-columns:repeat(3,1fr);gap:16px}}
+@media(min-width:1000px){.gal-grid{grid-template-columns:repeat(4,1fr)}}
+.gal-item{position:relative;margin:0;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:#eeece6;border:1px solid var(--line);cursor:zoom-in;isolation:isolate}
+.gal-item img,.gal-item video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.gal-item:hover img,.gal-item:hover video{transform:scale(1.05)}
+.gal-item figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 12px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.72));color:#fff;font-family:'Poppins',sans-serif;font-size:12.5px;font-weight:600;line-height:1.3;pointer-events:none}
+.gal-item::before{content:"";position:absolute;top:12px;left:12px;width:8px;height:8px;border-radius:50%;background:var(--red);z-index:2;box-shadow:0 0 0 3px rgba(255,255,255,.85)}
+.gal-video{cursor:default}
+.gal-video::after{content:"VÍDEO";position:absolute;top:10px;right:10px;background:var(--red);color:#fff;font-size:10px;font-weight:700;letter-spacing:.14em;padding:4px 9px;border-radius:999px;z-index:2}
+.gal-item.is-hidden{display:none}
+.gal-more-wrap{display:flex;justify-content:center;margin-top:28px}
+.gal-more{font-family:'Poppins',sans-serif}
+.gal-more[hidden]{display:none}
+
+/* Visor */
+.gal-lightbox{position:fixed;inset:0;z-index:1000;background:rgba(8,8,8,.94);display:flex;align-items:center;justify-content:center;padding:56px 16px;opacity:0;transition:opacity .25s ease}
+.gal-lightbox[hidden]{display:none}
+.gal-lightbox.is-open{opacity:1}
+.gal-lb-fig{margin:0;max-width:min(1000px,100%);max-height:100%;display:flex;flex-direction:column;align-items:center;gap:12px}
+.gal-lb-fig img{max-width:100%;max-height:calc(100dvh - 140px);object-fit:contain;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.gal-lb-fig figcaption{color:#e8e6e1;font-family:'Poppins',sans-serif;font-size:14px;text-align:center}
+.gal-lb-close,.gal-lb-nav{position:absolute;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:50%;width:46px;height:46px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s}
+.gal-lb-close:hover,.gal-lb-nav:hover{background:var(--red);border-color:var(--red)}
+.gal-lb-close svg,.gal-lb-nav svg{width:20px;height:20px}
+.gal-lb-close{top:14px;right:14px}
+.gal-lb-nav.prev{left:14px;top:50%;transform:translateY(-50%)}
+.gal-lb-nav.next{right:14px;top:50%;transform:translateY(-50%)}
+@media(max-width:720px){
+  .gal-lb-nav{top:auto;bottom:16px;transform:none}
+  .gal-lb-nav.prev{left:calc(50% - 56px)}
+  .gal-lb-nav.next{right:calc(50% - 56px)}
+  .gal-lb-fig img{max-height:calc(100dvh - 170px)}
+  .gal-item figcaption{font-size:11.5px;padding:24px 10px 10px}
+}
+
+/* Contacto: botón de WhatsApp destacado */
+.cta-list a.cta-wa{background:#25D366;border-color:#25D366;font-weight:600}
+.cta-list a.cta-wa:hover{background:#1db954}
+.cta-list a.cta-wa svg{color:#fff}
+.cta-list a.cta-wa small{color:rgba(255,255,255,.85)}

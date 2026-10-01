@@ -4,7 +4,7 @@ window.addEventListener('load',()=>{
   if(pl){setTimeout(()=>pl.classList.add('hide'),300)}
 });
 
-// Contact form
+// Contact form (envío por FormSubmit a reformplangc@gmail.com)
 function handleForm(e){
   e.preventDefault();
   const form=e.target;
@@ -19,9 +19,9 @@ function handleForm(e){
     method:'POST',
     body:new FormData(form),
     headers:{Accept:'application/json'}
-  }).then(r=>{
+  }).then(r=>r.json().catch(()=>({})).then(d=>({ok:r.ok,d}))).then(({ok:resOk,d})=>{
     btn.innerHTML=originalText;btn.disabled=false;
-    if(r.ok){
+    if(resOk && String(d.success)!=='false'){
       form.reset();
       if(ok){ok.style.display='block';setTimeout(()=>ok.style.display='none',6000)}
     } else {
@@ -120,10 +120,10 @@ window.addEventListener('scroll',onScroll,{passive:true});onScroll();
   const nameEl=document.getElementById('procBigName');
   const dots=document.querySelectorAll('.proc-nav-dot');
   const steps=[
-    {num:'01',name:'Contacto'},
-    {num:'02',name:'Visita'},
-    {num:'03',name:'Presupuesto'},
-    {num:'04',name:'Obra y entrega'}
+    {num:'01',name:'Visita'},
+    {num:'02',name:'Planificación'},
+    {num:'03',name:'Ejecución'},
+    {num:'04',name:'Entrega'}
   ];
   const setStep=i=>{
     if(numEl){
@@ -145,17 +145,6 @@ window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 })();
 
 // Count-up trust numbers
-const countUp=(el,target,suffix)=>{
-  const dur=1400,start=performance.now();
-  const tick=t=>{
-    const p=Math.min(1,(t-start)/dur);
-    const eased=1-Math.pow(1-p,3);
-    el.firstChild.textContent=Math.round(target*eased)+(suffix||'');
-    if(p<1)requestAnimationFrame(tick);
-    else el.firstChild.textContent=target+(suffix||'');
-  };
-  requestAnimationFrame(tick);
-};
 const trustIO=new IntersectionObserver(es=>es.forEach(e=>{
   if(!e.isIntersecting||e.target.dataset.counted)return;
   e.target.dataset.counted=1;
@@ -207,7 +196,7 @@ document.querySelectorAll('.ba-slider').forEach(s=>{
 (function(){
   const svcData={
     'Vivienda completa':{
-      desc:'Reformamos tu piso o casa al completo en Gran Canaria: redistribuimos espacios, renovamos instalaciones eléctricas y de fontanería, cambiamos suelos, alicatados, pinturas y carpintería. Un solo equipo, un solo presupuesto cerrado y sin sorpresas al final de la obra.',
+      desc:'Reformamos tu piso o casa al completo en Gran Canaria: redistribuimos espacios, renovamos instalaciones eléctricas y de fontanería, cambiamos suelos, alicatados, pinturas y carpintería. Un solo equipo y un solo presupuesto cerrado por escrito.',
       precio:'Desde 12.000 €',plazo:'4 – 10 semanas',
       items:['Distribución y tabiquería nueva','Instalación eléctrica completa','Fontanería y sanitarios','Suelos y alicatados','Pinturas y acabados','Carpintería interior','Coordinación de todos los gremios'],
       faq:[
@@ -234,9 +223,9 @@ document.querySelectorAll('.ba-slider').forEach(s=>{
       ]
     },
     'Albañilería':{
-      desc:'Realizamos todo tipo de trabajos de albañilería en Gran Canaria: demoliciones, apertura de huecos, tabiquería de pladur o ladrillo, solados, alicatados, enfoscados y revocos. Mano de obra propia y materiales de primera calidad.',
+      desc:'Realizamos todo tipo de trabajos de albañilería en Gran Canaria: demoliciones, apertura de huecos, tabiquería de pladur, bloque o ladrillo, solados, alicatados, enfoscados, revocos e impermeabilización de azoteas. Mano de obra propia y materiales de primera calidad.',
       precio:'Presupuesto a medida',plazo:'Según alcance',
-      items:['Demoliciones y apertura de huecos','Tabiquería de ladrillo o pladur','Solados y alicatados','Enfoscados y revocos','Cielos rasos y escayola','Impermeabilizaciones'],
+      items:['Demoliciones y apertura de huecos','Tabiquería de bloque, ladrillo o pladur','Solados y alicatados','Enfoscados y revocos','Cielos rasos y escayola','Impermeabilización de azoteas','Rehabilitación y pintura de fachadas'],
       faq:[
         {q:'¿Hacéis solo albañilería o también otros gremios?',a:'Podemos encargarnos solo de albañilería o coordinar también electricidad, fontanería y pintura si lo necesitas.'},
         {q:'¿Retiráis los escombros?',a:'Sí. La retirada y gestión de escombros está incluida en el presupuesto.'}
@@ -365,4 +354,63 @@ document.querySelectorAll('.ba-slider').forEach(s=>{
     if(Math.abs(dx)>50)go(i+(dx<0?1:-1));
     dx=0;dragging=false;
   });
+})();
+
+// Galería: "ver todas" + visor de fotos
+(function(){
+  const grid=document.getElementById('galGrid');
+  if(!grid)return;
+  const items=Array.from(grid.querySelectorAll('.gal-item'));
+  const more=document.getElementById('galMore');
+  const LIMIT=8;
+  if(items.length>LIMIT&&more){
+    items.slice(LIMIT).forEach(el=>el.classList.add('is-hidden'));
+    more.addEventListener('click',()=>{
+      items.forEach(el=>el.classList.remove('is-hidden'));
+      more.hidden=true;
+    });
+  } else if(more){more.hidden=true}
+
+  const photos=items.filter(el=>el.querySelector('img'));
+  const lb=document.getElementById('galLightbox');
+  const lbImg=document.getElementById('galLbImg');
+  const lbCap=document.getElementById('galLbCap');
+  let cur=0,prevFocus;
+  const show=n=>{
+    cur=(n+photos.length)%photos.length;
+    const img=photos[cur].querySelector('img');
+    const cap=photos[cur].querySelector('figcaption');
+    lbImg.src=img.src;lbImg.alt=img.alt;
+    lbCap.textContent=cap?cap.textContent:'';
+  };
+  const open=n=>{
+    prevFocus=document.activeElement;
+    show(n);lb.hidden=false;
+    requestAnimationFrame(()=>lb.classList.add('is-open'));
+    document.body.style.overflow='hidden';
+    lb.querySelector('.gal-lb-close').focus();
+  };
+  const close=()=>{
+    lb.classList.remove('is-open');
+    setTimeout(()=>{lb.hidden=true;document.body.style.overflow='';if(prevFocus)prevFocus.focus()},250);
+  };
+  photos.forEach((el,k)=>{
+    el.tabIndex=0;
+    el.setAttribute('role','button');
+    el.addEventListener('click',()=>open(k));
+    el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open(k)}});
+  });
+  lb.querySelector('.gal-lb-close').addEventListener('click',close);
+  lb.querySelector('.gal-lb-nav.prev').addEventListener('click',e=>{e.stopPropagation();show(cur-1)});
+  lb.querySelector('.gal-lb-nav.next').addEventListener('click',e=>{e.stopPropagation();show(cur+1)});
+  lb.addEventListener('click',e=>{if(e.target===lb)close()});
+  document.addEventListener('keydown',e=>{
+    if(lb.hidden)return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')show(cur-1);
+    if(e.key==='ArrowRight')show(cur+1);
+  });
+  let sx=0;
+  lb.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+  lb.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)show(cur+(dx<0?1:-1))});
 })();

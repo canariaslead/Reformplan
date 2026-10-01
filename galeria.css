@@ -43,3 +43,6 @@
 .cta-list a.cta-wa:hover{background:#1db954}
 .cta-list a.cta-wa svg{color:#fff}
 .cta-list a.cta-wa small{color:rgba(255,255,255,.85)}
+
+/* Hero: 3 iconos de confianza en una fila también en móvil */
+@media(max-width:720px){.hero-trust-icons{grid-template-columns:repeat(3,1fr)}}

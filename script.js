@@ -274,6 +274,9 @@ document.querySelectorAll('.ba-slider').forEach(s=>{
     pMeta.innerHTML=d.precio?`<span class="svc-popup-pill">💰 ${d.precio}</span><span class="svc-popup-pill">⏱ ${d.plazo}</span>`:'';
     pItems.innerHTML=(d.items||[]).map(i=>`<li>${i}</li>`).join('');
     pFaq.innerHTML=(d.faq||[]).map(f=>`<details class="svc-popup-faq-item"><summary>${f.q}</summary><p>${f.a}</p></details>`).join('');
+    const pages={'Vivienda completa':'reformas-integrales','Baños':'banos','Cocinas':'cocinas','Albañilería':'albanileria','Fontanería':'fontaneria','Electricidad':'electricidad'};
+    const more=document.getElementById('svc-popup-more');
+    if(more){if(pages[title]){more.href='/servicios/'+pages[title]+'.html';more.style.display=''}else{more.style.display='none'}}
     popup.setAttribute('aria-label',title);
     prevFocus=document.activeElement;
     popup.style.display='flex';
